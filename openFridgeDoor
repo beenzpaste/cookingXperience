@@ -14,11 +14,15 @@ public class openFridgeDoor : MonoBehaviour
 
         if (other.gameObject == handSensor)
         {
-                Debug.Log("Is Touching");
-                // Close the fridge door
-                closedDoor.SetActive(false);
-                openedDoor.SetActive(true);
-                AudioSource.PlayClipAtPoint(collisionSound, transform.position);
+            // check if sensor is touching door
+            Debug.Log("Is Touching");
+                
+            // Close the fridge door - closed door object vanishes, opened door object appears
+            closedDoor.SetActive(false);
+            openedDoor.SetActive(true);
+
+            // play attached audio of door opening
+            AudioSource.PlayClipAtPoint(collisionSound, transform.position);
         }
     }
 }
