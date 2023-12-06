@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WarningSignManager : MonoBehaviour
+{
+    public static WarningSignManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    public void ShowWarningSign()
+    {
+        // Activate the warning sign object
+        gameObject.SetActive(true);
+        // You can add additional actions here, like animations or sounds
+    }
+
+    public void HideWarningSign()
+    {
+        // Deactivate the warning sign object
+        gameObject.SetActive(false);
+    }
+}
