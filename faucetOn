@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FaucetOn : MonoBehaviour
+{
+    public GameObject waterObject; // Water particle system attached to this
+    public GameObject handSensor; //  hand sensor GameObject.
+    private bool isWaterVisible = false;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        // Get the AudioSource component attached to the same GameObject
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == handSensor)
+        {
+            Debug.Log("HandSensor entered the faucet area.");
+            ToggleWaterVisibility();
+
+        }
+    }
+
+    private void ToggleWaterVisibility()
+    {
+        isWaterVisible = !isWaterVisible;
+
+        if (isWaterVisible)
+        {
+            // Make the water particle system visible
+            waterObject.SetActive(true);
+            Debug.Log("Water turned ON.");
+            if (audioSource.clip != null)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            // Hide the water particle system
+            waterObject.SetActive(false);
+            Debug.Log("Water turned OFF.");
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+    }
+}
