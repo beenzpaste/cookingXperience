@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class knifeCutHand : MonoBehaviour
+{
+    public GameObject hand; // Reference to the hand object
+    public WarningSignManager warningSignManager;
+
+    private bool warningActive = false;
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == hand)
+        {
+            Debug.Log("Is Touching");
+            // Collision with hand detected
+            SetEnvironmentRed();
+            ShowWarningSign();
+
+            Invoke("ResetEnvironment", 5f);
+            Invoke("HideWarningSign", 5f);
+        }
+
+    }
+
+    private void SetEnvironmentRed()
+    {
+        // Set the environment color to red (you can customize this based on your requirements)
+        RenderSettings.ambientLight = Color.red;
+        // You may also want to adjust other visual effects or materials in your environment
+    }
+
+    private void ShowWarningSign()
+    {
+        // Call the ShowWarningSign method from the WarningSignManager script
+        warningSignManager.ShowWarningSign();
+        warningActive = true;
+    }
+
+    private void HideWarningSign()
+    {
+        // Call the HideWarningSign method from the WarningSignManager script
+        warningSignManager.HideWarningSign();
+    }
+
+    private void ResetEnvironment()
+    {
+        // Reset the environment color to its original state
+        RenderSettings.ambientLight = Color.white;
+        warningActive = false;
+    }
+
+}
