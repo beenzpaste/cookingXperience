@@ -21,6 +21,13 @@ public class knifeCutHand : MonoBehaviour
 
             Invoke("ResetEnvironment", 5f);
             Invoke("HideWarningSign", 5f);
+
+            // check if right hand controller is connected
+            if (OVRInput.IsControllerConnected(OVRInput.Controller.RTouch))
+            {
+                // Trigger haptic feedback on the right hand controller for 0.5 seconds
+                OVRInput.SetControllerVibration(0.5f, 1.0f, OVRInput.Controller.RTouch);
+            }
         }
 
     }
@@ -53,3 +60,4 @@ public class knifeCutHand : MonoBehaviour
     }
 
 }
+
