@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class stoveOn : MonoBehaviour
+{
+    public GameObject stoveObject; // heated stove attached to this
+    public GameObject handSensor; //  hand sensor GameObject.
+    private bool isStoveOn = false;
+    public AudioClip collisionSound;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == handSensor)
+        {
+            Debug.Log("HandSensor touched the stove.");
+            ToggleWaterVisibility();
+
+        }
+    }
+
+    private void ToggleWaterVisibility()
+    {
+        isStoveOn = !isStoveOn;
+
+        if (isStoveOn)
+        {
+            // Make the water particle system visible
+            stoveObject.SetActive(true);
+            Debug.Log("stove turned ON.");
+            AudioSource.PlayClipAtPoint(collisionSound, transform.position);
+        }
+        else
+        {
+            // Hide the water particle system
+            stoveObject.SetActive(false);
+            Debug.Log("stove turned OFF.");
+            
+        }
+    }
+}
