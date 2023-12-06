@@ -5,8 +5,9 @@ using UnityEngine;
 public class knifeCutHand : MonoBehaviour
 {
     public GameObject hand; // Reference to the hand object
-    public WarningSignManager warningSignManager;
+    public WarningSignManager warningSignManager; // reference to WarningSignManager script
 
+    // tracks whether warning sign is visible
     private bool warningActive = false;
 
 
@@ -14,11 +15,13 @@ public class knifeCutHand : MonoBehaviour
     {
         if (other.gameObject == hand)
         {
+            // check if hand sensor is touching knife
             Debug.Log("Is Touching");
-            // Collision with hand detected
+
             SetEnvironmentRed();
             ShowWarningSign();
 
+            // environment is reset and warning sign is hidden after 5 seconds
             Invoke("ResetEnvironment", 5f);
             Invoke("HideWarningSign", 5f);
 
@@ -34,30 +37,28 @@ public class knifeCutHand : MonoBehaviour
 
     private void SetEnvironmentRed()
     {
-        // Set the environment color to red (you can customize this based on your requirements)
+        // environment color is set to red
         RenderSettings.ambientLight = Color.red;
-        // You may also want to adjust other visual effects or materials in your environment
     }
 
     private void ShowWarningSign()
     {
-        // Call the ShowWarningSign method from the WarningSignManager script
+        // the ShowWarningSign method is called from the WarningSignManager script
         warningSignManager.ShowWarningSign();
         warningActive = true;
     }
 
     private void HideWarningSign()
     {
-        // Call the HideWarningSign method from the WarningSignManager script
+        //the HideWarningSign method is called from the WarningSignManager script
         warningSignManager.HideWarningSign();
     }
 
     private void ResetEnvironment()
     {
-        // Reset the environment color to its original state
+        // the environment color is reset to its original state
         RenderSettings.ambientLight = Color.white;
         warningActive = false;
     }
 
 }
-
