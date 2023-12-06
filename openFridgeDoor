@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class openFridgeDoor : MonoBehaviour
+{
+    public GameObject closedDoor;
+    public GameObject openedDoor;
+    public GameObject handSensor;
+    public AudioClip collisionSound;
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject == handSensor)
+        {
+                Debug.Log("Is Touching");
+                // Close the fridge door
+                closedDoor.SetActive(false);
+                openedDoor.SetActive(true);
+                AudioSource.PlayClipAtPoint(collisionSound, transform.position);
+        }
+    }
+}
