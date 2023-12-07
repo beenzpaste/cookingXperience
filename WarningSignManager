@@ -6,17 +6,21 @@ public class WarningSignManager : MonoBehaviour
 {
     public static WarningSignManager instance;
 
+    // Ensure only one instance of WarningSignManager exists in the game at a given time
     private void Awake()
     {
+        // creates instance only if an instance of WarningSignManager is null, or doesn't exist
         if (instance == null)
         {
             instance = this;
         }
+        // destroys current gameObject if an instance already exists
         else
         {
             Destroy(gameObject);
         }
 
+        // deactivates/hides the game object
         gameObject.SetActive(false);
     }
 
@@ -24,7 +28,6 @@ public class WarningSignManager : MonoBehaviour
     {
         // Activate the warning sign object
         gameObject.SetActive(true);
-        // You can add additional actions here, like animations or sounds
     }
 
     public void HideWarningSign()
