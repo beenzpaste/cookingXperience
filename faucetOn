@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FaucetOn : MonoBehaviour
 {
-    public GameObject waterObject; // Water particle system attached to this
-    public GameObject handSensor; //  hand sensor GameObject.
+    public GameObject waterObject;
+    public GameObject handSensor;
     private bool isWaterVisible = false;
     private AudioSource audioSource;
 
     void Start()
     {
-        // Get the AudioSource component attached to the same GameObject
+        // Obtain audio from attached AudioSource
         audioSource = GetComponent<AudioSource>();
+
+        // Make sure sound is off initially
         audioSource.Stop();
     }
 
@@ -35,6 +37,8 @@ public class FaucetOn : MonoBehaviour
             // Make the water particle system visible
             waterObject.SetActive(true);
             Debug.Log("Water turned ON.");
+
+            // Play water running sound
             if (audioSource.clip != null)
             {
                 audioSource.Play();
@@ -45,6 +49,8 @@ public class FaucetOn : MonoBehaviour
             // Hide the water particle system
             waterObject.SetActive(false);
             Debug.Log("Water turned OFF.");
+
+            // Terminate audio when water is off
             if (audioSource.isPlaying)
             {
                 audioSource.Stop();
