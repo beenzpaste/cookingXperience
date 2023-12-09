@@ -13,6 +13,7 @@ public class FaucetOn : MonoBehaviour
     {
         // Get the AudioSource component attached to the same GameObject
         audioSource = GetComponent<AudioSource>();
+        audioSource.Stop();
     }
 
     private void OnTriggerEnter(Collider other)
