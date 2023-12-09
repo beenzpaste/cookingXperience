@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class loadGameScene : MonoBehaviour
+{
+    public void LoadDestinationScene(int sceneID)
+    {
+        // Load scene with given ID
+        SceneManager.LoadScene(sceneID);
+    }
+
+    private void Start()
+    {
+       
+    }
+    private void Update()
+    {
+        
+    }
+}
