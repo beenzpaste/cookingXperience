@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class knifeCutHand : MonoBehaviour
 {
-    public GameObject hand; // Reference to the hand object
+    public GameObject hand; // reference to the hand object
     public WarningSignManager warningSignManager; // reference to WarningSignManager script
 
-    // tracks whether warning sign is visible
-    private bool warningActive = false;
 
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +26,7 @@ public class knifeCutHand : MonoBehaviour
             // check if right hand controller is connected
             if (OVRInput.IsControllerConnected(OVRInput.Controller.RTouch))
             {
-                // Trigger haptic feedback on the right hand controller for 0.5 seconds
+                // trigger haptic feedback on the right hand controller for 0.5 seconds
                 OVRInput.SetControllerVibration(0.5f, 1.0f, OVRInput.Controller.RTouch);
             }
         }
@@ -43,9 +41,11 @@ public class knifeCutHand : MonoBehaviour
 
     private void ShowWarningSign()
     {
+        Vector3 newCoordinate = new Vector3(1.3f, 0.6f, 1.3f);
+        warningSignManager.MoveSign(newCoordinate);
+
         // the ShowWarningSign method is called from the WarningSignManager script
         warningSignManager.ShowWarningSign();
-        warningActive = true;
     }
 
     private void HideWarningSign()
@@ -58,7 +58,6 @@ public class knifeCutHand : MonoBehaviour
     {
         // the environment color is reset to its original state
         RenderSettings.ambientLight = Color.white;
-        warningActive = false;
     }
 
 }
