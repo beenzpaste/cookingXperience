@@ -14,9 +14,9 @@ public class veggieInPan : MonoBehaviour
         // Check if the colliding object has the tag "knife"
         if (other.gameObject == handSensor)
         {
-            Vector3 newCoordinate = new Vector3(-0.9f, 0.15f, -0.15f);
-            transform.position = newCoordinate;
-
+            Vector3 newCoor = new Vector3(2.0f, 0.9f, 1.1f);
+            transform.position = newCoor;
+            gameObject.SetActive(true);
         }
         
 
