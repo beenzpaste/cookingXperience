@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class burnHand : MonoBehaviour
@@ -8,8 +9,6 @@ public class burnHand : MonoBehaviour
     public GameObject stoveHeat;
     public AudioClip collisionSound;
     public WarningSignManager warningSignManager;
-
-    private bool warningActive = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +21,9 @@ public class burnHand : MonoBehaviour
             {
                 SetEnvironmentRed();
                 ShowWarningSign();
+                AudioSource.PlayClipAtPoint(collisionSound, transform.position);
 
+                // Call following functions after 5 seconds
                 Invoke("ResetEnvironment", 5f);
                 Invoke("HideWarningSign", 5f);
             }
@@ -30,15 +31,16 @@ public class burnHand : MonoBehaviour
     }
     private void SetEnvironmentRed()
     {
-        // Set the environment color to red (you can customize this based on your requirements)
+        // Set the environment color to red
         RenderSettings.ambientLight = Color.red;
-        // You may also want to adjust other visual effects or materials in your environment
     }
     private void ShowWarningSign()
     {
+        Vector3 newCoordinate = new Vector3(2.2f, 0.5f, 1.0f);
+        warningSignManager.MoveSign(newCoordinate);
+
         // Call the ShowWarningSign method from the WarningSignManager script
         warningSignManager.ShowWarningSign();
-        warningActive = true;
     }
 
     private void HideWarningSign()
@@ -49,9 +51,9 @@ public class burnHand : MonoBehaviour
 
     private void ResetEnvironment()
     {
-        // Reset the environment color to its original state
+        // Reset the environment color to white
         RenderSettings.ambientLight = Color.white;
-        warningActive = false;
     }
 
 }
+
