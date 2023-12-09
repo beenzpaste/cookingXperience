@@ -6,14 +6,13 @@ using UnityEngine;
 public class veggieInPan : MonoBehaviour
 {
     public GameObject handSensor;
-    //public AudioClip collisionSound;
 
-    // OnTriggerEnter is called when another collider makes contact with this object's collider (trigger).
     private void OnTriggerEnter(Collider other)
     {
         // Check if the colliding object has the tag "knife"
         if (other.gameObject == handSensor)
         {
+            // create vector3 for new position coordinates
             Vector3 newCoor = new Vector3(2.0f, 0.9f, 1.1f);
             transform.position = newCoor;
             gameObject.SetActive(true);
