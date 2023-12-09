@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class stoveOn : MonoBehaviour
 {
-    public GameObject stoveObject; // attach heated stove object
+    public GameObject stoveObject; // Attach red cylinder that indicates heat is on
     public GameObject handSensor;
     private bool isStoveOn = false;
     public AudioClip collisionSound;
@@ -13,10 +13,10 @@ public class stoveOn : MonoBehaviour
     {
         if (other.gameObject == handSensor)
         {
-            // check if hand sensor is touching stove knob
+            // Check if hand sensor is touching stove knob
             Debug.Log("HandSensor touched the stove.");
 
-            // show red heated stove object
+            // Show red heated stove object
             ToggleStoveVisibility();
 
         }
@@ -32,7 +32,7 @@ public class stoveOn : MonoBehaviour
             stoveObject.SetActive(true);
             Debug.Log("stove turned ON.");
 
-            // play audio of stove turning on
+            // Play audio of stove turning on
             AudioSource.PlayClipAtPoint(collisionSound, transform.position);
         }
         else
