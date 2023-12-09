@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class washedCarrot : MonoBehaviour
+{
+    public GameObject waterParticle;
+    public GameObject beforeMessage;
+    public GameObject afterMessage;
+
+    // OnTriggerEnter is called when another collider makes contact with this object's collider (trigger).
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if the colliding object is waterParticle
+        if (other.gameObject == waterParticle)
+        {
+            // congratulatory message
+            this.gameObject.SetActive(false);
+            beforeMessage.gameObject.SetActive(false);
+            afterMessage.gameObject.SetActive(true);
+        }
+
+
+    }
+}
