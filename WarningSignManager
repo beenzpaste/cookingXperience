@@ -35,8 +35,10 @@ public class WarningSignManager : MonoBehaviour
         // Deactivate the warning sign object
         gameObject.SetActive(false);
     }
+
     public void MoveSign(Vector3 newCoordinate)
-        {
-            gameObject.transform.position = newCoordinate;
-        }
+    {
+        // moves warning sign to given coordinate
+        gameObject.transform.position = newCoordinate;
+    }
 }
