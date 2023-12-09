@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class showText : MonoBehaviour
+{
+    public floatingText floatingText;
+
+    public void DisplayCustomText(string text)
+    {
+        floatingText.ShowText(text);
+        Invoke("HideText", 7f);
+    }
+}
