@@ -26,6 +26,13 @@ public class burnHand : MonoBehaviour
                 // Call following functions after 5 seconds
                 Invoke("ResetEnvironment", 5f);
                 Invoke("HideWarningSign", 5f);
+
+                // Check if right hand controller is connected
+                if (OVRInput.IsControllerConnected(OVRInput.Controller.RTouch))
+                {
+                    // Trigger haptic feedback on the right hand controller for 0.5 seconds
+                    OVRInput.SetControllerVibration(0.5f, 1.0f, OVRInput.Controller.RTouch);
+                }
             }
         }
     }
@@ -36,6 +43,7 @@ public class burnHand : MonoBehaviour
     }
     private void ShowWarningSign()
     {
+        // Call the MoveSign method from the WarningSignManager script
         Vector3 newCoordinate = new Vector3(2.2f, 0.5f, 1.0f);
         warningSignManager.MoveSign(newCoordinate);
 
@@ -51,7 +59,7 @@ public class burnHand : MonoBehaviour
 
     private void ResetEnvironment()
     {
-        // Reset the environment color to white
+        // Reset the environment color 
         RenderSettings.ambientLight = Color.white;
     }
 
