@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class floatingText : MonoBehaviour
+{
+    public Text textComponent;
+
+    void Start()
+    {
+        // Hide text initially
+        SetTextVisibility(true);
+    }
+
+    void Update()
+    {
+        transform.LookAt(Camera.main.transform);
+    }
+
+    public void ShowText(string displayText)
+    {
+        // Set the text content
+        textComponent.text = displayText;
+
+        // Show the text
+        SetTextVisibility(true);
+    }
+
+    public void HideText()
+    {
+        // Hide the text
+        SetTextVisibility(false);
+    }
+
+    private void SetTextVisibility(bool isVisible)
+    {
+        // Set the visibility of the text component
+        textComponent.gameObject.SetActive(isVisible);
+    }
+}
