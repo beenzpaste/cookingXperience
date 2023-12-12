@@ -1,11 +1,13 @@
 # Cooking Xperience - A Cooking Simulation
+
 CPE Unity VR Project, Fall 2023
+
 Sheena Chiang, Nada Beltagui, Razan Lakis, Assia Ben El Barguia
 
-## About this project:
+### About this project:
 The creators of this game aimed to create an educational game-like simulation that familiarizes the user in the kitchen by guiding the user through basic tasks and warning against common dangers in the kitchen.
 
-## Simulation Objective:
+### Simulation Objective:
 Following four crucial steps, learn to cook a healthy vegetable dish from start to finish, familiarizing yourself with basic equipment, tasks, and safety considerations in the kitchen in the process
 
 ## User Manual
@@ -14,6 +16,6 @@ Following four crucial steps, learn to cook a healthy vegetable dish from start 
 - **Task One:** Retrieve the carrot by grabbing it with the left or right controller. Navigate to the sink on the far right of the kitchen.
 - **Task Two:** Turn on the faucet by touching the right controller to the faucet knob on the right. Once water begins flowing, bring the carrot from the fridge under the running particles of water.
 - **Task Three:** Navigate to the cutting board. Grab the carrot with the left controller and the knife with the right. This can be reversed. Touch the knife to each segment of the carrot. The carrot pieces will fall. Retrieve the carrot pieces by touching the right controller to each piece. Each piece will appear in the pan on the right.
-- Note: If the knife touches the left hand, a warning sign will pop up, and the environment will turn red. After 5 seconds, the warning sign will vanish and the environment will revert back to normal.
+  - Note: If the knife touches the left hand, a warning sign will pop up, and the environment will turn red. After 5 seconds, the warning sign will vanish and the environment will revert back to normal.
 - **Task Three:** Navigate to the pan. Retrieve the celery pieces in the plate on the left by touching the right controller to each piece, and each piece will appear in the pan. Turn on the stove by touching the right controller to the stove knob on the right. The stove will turn red to indicate that the heat is on. Grab the spatula on the right with either controller, then maneuver it to stir the vegetable pieces around in the pan.
-- Note: If the right hand touches the pan while the heat is on (as indicated by a red stovetop), a warning sign will pop up, and the environment will turn red. After 5 seconds, the warning sign will vanish and the environment will revert back to normal.
+  - Note: If the right hand touches the pan while the heat is on (as indicated by a red stovetop), a warning sign will pop up, and the environment will turn red. After 5 seconds, the warning sign will vanish and the environment will revert back to normal.
