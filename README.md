@@ -19,3 +19,15 @@ Following four crucial steps, learn to cook a healthy vegetable dish from start 
   - Note: If the knife touches the left hand, a warning sign will pop up, and the environment will turn red. After 5 seconds, the warning sign will vanish and the environment will revert back to normal.
 - **Task Three:** Navigate to the pan. Retrieve the celery pieces in the plate on the left by touching the right controller to each piece, and each piece will appear in the pan. Turn on the stove by touching the right controller to the stove knob on the right. The stove will turn red to indicate that the heat is on. Grab the spatula on the right with either controller, then maneuver it to stir the vegetable pieces around in the pan.
   - Note: If the right hand touches the pan while the heat is on (as indicated by a red stovetop), a warning sign will pop up, and the environment will turn red. After 5 seconds, the warning sign will vanish and the environment will revert back to normal.
+ 
+## Challenges Encountered
+- Minor Bugs
+  - The cut vegetables did not respawn at the correct coordinates after being retrieved
+  - Vegetables rolled off the pan
+  - The spawned inside the fridge due to an unexpected camera
+  - The running water sound would start playing when the simulation began
+- Inconsistencies in actions
+  - At times, the carrot does not appear in the pan after being retrieved
+- Implementing a starting scene
+- Implementing instructions that appear in the user's peripheral vision
+
