@@ -30,4 +30,5 @@ Following four crucial steps, learn to cook a healthy vegetable dish from start 
   - At times, the carrot does not appear in the pan after being retrieved
 - Implementing a starting scene
 - Implementing instructions that appear in the user's peripheral vision
+  - Repository files commented as "NOT USED" was a result of attempts to implement this
 
