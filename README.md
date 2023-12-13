@@ -32,3 +32,5 @@ Following four crucial steps, learn to cook a healthy vegetable dish from start 
 - Implementing instructions that appear in the user's peripheral vision
   - Repository files commented as "NOT USED" was a result of attempts to implement this
 
+# Project Documentation
+Detailed project documentation can be found in this Google Doc: https://docs.google.com/document/d/1uiT4khovnXf4iLK3707XJuwzhiEig2vHG5EdClrGwL8/edit?usp=sharing
