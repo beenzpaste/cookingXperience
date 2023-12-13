@@ -24,7 +24,7 @@ Following four crucial steps, learn to cook a healthy vegetable dish from start 
 - Minor Bugs
   - The cut vegetables did not respawn at the correct coordinates after being retrieved
   - Vegetables rolled off the pan
-  - The spawned inside the fridge due to an unexpected camera
+  - The user spawned inside the fridge due to an unexpected camera
   - The running water sound would start playing when the simulation began
 - Inconsistencies in actions
   - At times, the carrot does not appear in the pan after being retrieved
