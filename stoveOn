@@ -9,10 +9,8 @@ public class stoveOn : MonoBehaviour
     private bool isStoveOn = false;
     public AudioClip collisionSound;
 
-    //When another collider enters trigger zone of this game object
     private void OnTriggerEnter(Collider other)
     {
-        //It checks if the colliding object is the hand Sensor
         if (other.gameObject == handSensor)
         {
             // Check if hand sensor is touching stove knob
